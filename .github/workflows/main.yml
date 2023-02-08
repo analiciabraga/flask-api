@@ -1,0 +1,15 @@
+name: list files
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  list-my-files:
+    runs-on: self-hosted
+    steps:
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
